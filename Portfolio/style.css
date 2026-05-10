@@ -1,0 +1,88 @@
+/* الألوان والتنسيق الأساسي */
+:root {
+    --main-bg: #0a192f;
+    --card-bg: #112240;
+    --accent: #64ffda;
+    --text: #ccd6f6;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+/* صورة البروفايل مع تأثير نبض */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(100, 255, 218, 0.5); }
+    100% { transform: scale(1); }
+}
+
+/* تأثيرات الظهور (Animations) */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* كروت المهارات وتأثير الـ Hover */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 20px 40px;
+    border-radius: 10px;
+    border-bottom: 3px solid var(--accent);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    background: var(--accent);
+    color: var(--main-bg);
+    transform: translateY(-10px) rotate(2deg);
+}
+
+/* تذييل الصفحة */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #020c1b;
+    font-size: 0.9rem;
+}
